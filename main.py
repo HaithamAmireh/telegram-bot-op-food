@@ -2,32 +2,11 @@ import os
 import random
 
 import telebot
+from util import food_item, food_items_snacks, resturants_to_food, resturants_to_snacks
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 
 bot = telebot.TeleBot(BOT_TOKEN)
-
-food_items = [
-    "Burgers",
-    "Pizza",
-    "Zarb",
-    "Mansaf",
-    "FriedChicken",
-    "Shawarma",
-]
-food_items_snacks = ["IceCream", "BubbleTea", "Juice"]
-
-resturants_to_food = {
-    "Burgers": ["Cube", "FattyDabs", "99Grills", "MeatandCheese", "Wingers"],
-    "Pizza": ["Mama2eesh", "Pizza SQRD", "The Big Slice", "Sallet Ajeen"],
-    "Zarb": ["Asl Al-Zarb", "Zarb Al-Nasser"],
-    "Mansaf": ["Sharibha", "Dahberha", "Mahamead", "Al-Jamal"],
-    "FriedChicken": ["Crispy Chicken", "Nashvile", "Wingers"],
-    "Shawarma": ["Al Daya", "Karam", "Jamet Arab", "Saj"],
-}
-
-resturants_to_snacks = {"IceCream": [], "BubbleTea": [], "Juice": []}
-
 
 @bot.message_handler(commands=["food"])
 def list_categories_food(message):
