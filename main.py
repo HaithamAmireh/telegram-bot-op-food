@@ -5,7 +5,7 @@ import telebot
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 
-bot = telebot.TeleBot("7275462111:AAHCc3KczE-jeA28JbsBDGR19Bos3aWiDZ8")
+bot = telebot.TeleBot(BOT_TOKEN)
 
 food_items = [
     "Burgers",
